@@ -1,10 +1,5 @@
 ## Travel Search Backend API
 
-├── server.js # Main server file  
-
-├── package.json # Project dependencies and scripts  
-
-├── mydb.sql # PostgreSQL database
 
 ### The `mydb.sql` file contains:
 - Pre-stored data for flights and attractions
