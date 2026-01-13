@@ -53,7 +53,7 @@ cd Assignment_04
 
 ### Install dependencies
 ```
-npm install
+npm install express pg
 
 ```
 ### Configure PostgreSQL connection in server.js
