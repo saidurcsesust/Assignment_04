@@ -3,7 +3,7 @@ import { defaultOptions } from "../config/rapidapi.js";
 export async function fetchDestinationId(query) {
   const url =
     `https://booking-com15.p.rapidapi.com/api/v1/flights/searchDestination` +
-    `?query=${encodeURIComponent(query)}`;
+    `?query=${query}`;
 
   const res = await fetch(url, defaultOptions);
   if (!res.ok) throw new Error(`API error ${res.status}`);
@@ -17,9 +17,9 @@ export async function fetchDestinationId(query) {
 export async function searchFlightsOffers({ fromId, toId, departDateISO }) {
   const searchUrl =
     "https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights" +
-    `?fromId=${encodeURIComponent(fromId)}` +
-    `&toId=${encodeURIComponent(toId)}` +
-    `&departDate=${encodeURIComponent(departDateISO)}` +
+    `?fromId=${fromId}` +
+    `&toId=${toId}` +
+    `&departDate=${departDateISO}` +
     `&stops=none&pageNo=1&adults=1&children=0%2C17&sort=BEST&cabinClass=ECONOMY&currency_code=AED`;
 
   const res = await fetch(searchUrl, defaultOptions);
@@ -34,7 +34,7 @@ export async function searchFlightsOffers({ fromId, toId, departDateISO }) {
 export async function getFlightDetailsByToken(token) {
   const url =
     "https://booking-com15.p.rapidapi.com/api/v1/flights/getFlightDetails" +
-    `?token=${encodeURIComponent(token)}&currency_code=AED`;
+    `?token=${token}&currency_code=AED`;
 
   const res = await fetch(url, defaultOptions);
   const json = await res.json();

@@ -3,7 +3,7 @@ import { defaultOptions } from "../config/rapidapi.js";
 export async function searchAttractionLocation(query) {
   const url =
     "https://booking-com15.p.rapidapi.com/api/v1/attraction/searchLocation" +
-    `?query=${encodeURIComponent(query)}&languagecode=en-us`;
+    `?query=${query}&languagecode=en-us`;
 
   const res = await fetch(url, defaultOptions);
   const json = await res.json();
@@ -17,7 +17,7 @@ export async function searchAttractionLocation(query) {
 export async function getAttractionDetails(slug) {
   const url =
     "https://booking-com15.p.rapidapi.com/api/v1/attraction/getAttractionDetails" +
-    `?slug=${encodeURIComponent(slug)}&currency_code=USD`;
+    `?slug=${slug}&currency_code=USD`;
 
   const res = await fetch(url, defaultOptions);
   const json = await res.json();
